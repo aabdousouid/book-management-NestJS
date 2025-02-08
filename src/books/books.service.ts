@@ -14,9 +14,9 @@ export class BooksService {
   }
 
   async create(book: CreateBookDto): Promise<IBook> {
-    const newBook = new this.bookModel(book);
-    return newBook.save();
+    return this.bookModel.create(book);
   }
+  
 
   async update(id: string, book: UpdateBookDto): Promise<Book> {
     const updatedBook = await this.bookModel
